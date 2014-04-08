@@ -195,8 +195,9 @@ class CustomSocial_LifeCycle extends CustomSocial_InstallIndicator {
     
 	    if ( $value )
 	    {
-	    	$shareHtml = '<a href="https://twitter.com/share" class="twitter-share-button" data-text="'.$value.'">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\'://platform.twitter.com/widgets.js\';fjs.parentNode.insertBefore(js,fjs);}}(document, \'script\', \'twitter-wjs\');</script>';
+	    	$url = get_permalink();
+	    	
+	    	$shareHtml = '<a href="https://twitter.com/share" class="twitter-share-button" data-url="'.$url.'" data-text="'.$value.'">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\'://platform.twitter.com/widgets.js\';fjs.parentNode.insertBefore(js,fjs);}}(document, \'script\', \'twitter-wjs\');</script>';
 	    
 	        // Add image to the beginning of each page
 	        $content = sprintf(
